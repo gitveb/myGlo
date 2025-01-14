@@ -8,21 +8,58 @@ let service1 = prompt ("Какой дополнительный тип услу�
 let servicePrice1 = +prompt ("Сколько это будет стоить");
 let service2 = prompt ("Какой дополнительный тип услуги нужен?");
 let servicePrice2 = +prompt ("Сколько это будет стоить");
-let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let adaptive = confirm ("Нужен ли адаптив на сайте?");
-let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
-console.log(servicePercentPrice);
+let allServicePrices;
+let fullPrice;
+let servicePercentPrice;
 
-switch (true) {
-	case fullPrice >= 30000:
-		console.log("Даем скидку в 10%");
-		break
-	case fullPrice >= 15000 && fullPrice < 30000:
-		console.log("Даем скидку в 5%");
-		break
-	case fullPrice < 15000 && fullPrice > 0:
-		console.log("Скидка не предусмотрена");
-		break
-	case fullPrice <= 0:
-		console.log("Что то пошло не так");
-}		
+const getAllServicePrices = function() {
+	return servicePrice1 + servicePrice2;
+	
+}
+
+function getFullPrice() {
+	return screenPrice + allServicePrices;
+}
+// не понимаю как сделать остальные буквы в нижнем регистре toLocaleUpperCase()
+const getTitle = function() {
+	return title.trim().toUpperCase()
+}
+
+function getServicePercentPrices() {
+	return Math.ceil(fullPrice - (fullPrice * (rollback/100)));
+}
+
+const showTypeOf = function(variable) {
+	console.log(variable, typeof variable);
+}
+let getRollBackMassage = function () {
+	if (fullPrice >= 30000) {
+		return "Даем скидку в 10%";
+	} else if (fullPrice >= 15000 && fullPrice < 30000) {
+		return "Даем скидку в 5%";
+	} else if (fullPrice < 15000 && fullPrice >= 0) {
+		return "Скидка не предусмотрена";
+	} else {
+		return "Что-то пошло не так";
+	}
+}
+
+allServicePrices = getAllServicePrices();
+fullPrice = getFullPrice();
+title = getTitle();
+servicePercentPrice = getAllServicePrices();
+
+showTypeOf(title);
+showTypeOf(screenPrice);
+showTypeOf(adaptive);
+
+console.log(getRollBackMassage(fullPrice));
+console.log(title);
+console.log(screens);
+console.log(screenPrice);
+console.log(service1);
+console.log(service1);
+console.log(fullPrice);
+console.log(adaptive);
+console.log(servicePercentPrice);
