@@ -24,8 +24,8 @@ console.log(fullPrice);
 let adaptive = confirm ("Нужен ли адаптив на сайте?");
 console.log(adaptive);
 
-let servicePercentPrice = fullPrice - (fullPrice * (rollback/100));
-console.log(Math.ceil(servicePercentPrice));
+let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
+console.log(servicePercentPrice);
 
 switch (true) {
 	case fullPrice >= 30000:
