@@ -21,9 +21,9 @@ const getAllServicePrices = function() {
 function getFullPrice() {
 	return screenPrice + allServicePrices;
 }
-// не понимаю как сделать остальные буквы в нижнем регистре toLocaleUpperCase()
+
 const getTitle = function() {
-	return title.trim().toUpperCase()
+	return title.trim().toUpperCase()[0] + title.trim().slice(1).toLowerCase();
 }
 
 function getServicePercentPrices() {
