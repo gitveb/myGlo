@@ -29,7 +29,7 @@ const asking = function() {
 
 const getAllServicePrices = function() {
 	let sum = 0;
-	for (let i = 0; i < 1; i++) {
+	for (let i = 0; i < 2; i++) {
 		let price = 0
 
 		if (i === 0) {
@@ -48,7 +48,7 @@ const getAllServicePrices = function() {
 }
 
 function getFullPrice() {
-	return screenPrice + allServicePrices;
+	return +screenPrice + allServicePrices;
 }
 
 const getTitle = function() {
@@ -77,7 +77,7 @@ let getRollBackMassage = function () {
 asking();
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
-servicePercentPrice = getAllServicePrices();
+servicePercentPrice = getServicePercentPrices();
 title = getTitle();
 
 showTypeOf(title);
