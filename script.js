@@ -1,23 +1,43 @@
-let a = +prompt ("Загадывание случайного числа от 1 до 100", "")
-// не понимаю что нужно сделать что бы всё заработало(((
+// const query = function() {
+// 	+prompt ("Загадывание случайного числа от 1 до 100", "")
+// }
+let query = +prompt ("Угадай число от 1 до 100", "");
+
 
 const game = function(index) {
-	
+
 	if (index > 50) {
 		alert("Загаданное число меньше")
-	} else if (index < 50) {
+	}	else if (index < 50 && index > 0) {
 		alert("Загаданное число больше")	
-	} else if (index !== Number) {
+	}	else if (isNaN(index)) {
 		alert("Введи число!")
-	} else if (index === null) {
+	} 	else if (!index) {
 		alert("Игра окончена")
 	} else if (index === 50) {
 		alert("Поздравляю, Вы угадали!!!")
 	}
-		
+	
 }
-console.log(a)
-game(a)
+
+
+game(query)
+
+
+	
+// 	if (index > 50) {
+// 		alert("Загаданное число меньше")
+// 	} else if (index < 50) {
+// 		alert("Загаданное число больше")	
+// 	} else if (index !== Number) {
+// 		alert("Введи число!")
+// 	} else if (index === null) {
+// 		alert("Игра окончена")
+// 	} else if (index === 50) {
+// 		alert("Поздравляю, Вы угадали!!!")
+// 	}
+		
+// }
 
 // switch (true) {
 		// 	case a > 50:
