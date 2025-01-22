@@ -1,27 +1,59 @@
+function game() {
+
+	let number = +prompt ("Угадай число от 1 до 100", "");
+
+	function askNumber(index) {
+		if (index > 50) {
+			alert("Загаданное число меньше")
+			game(number)
+		}else if (index < 50 && index > 0) {
+			alert("Загаданное число больше")	
+			game(number)
+		}else if (isNaN(index)) {
+			alert("Введи число!")
+			game(number)
+		}	else if (!index) {
+			alert("Игра окончена")
+		}else if (index === 50) {
+			alert("Поздравляю, Вы угадали!!!")
+		} 
+	}
+	askNumber(number)
+}
+
+game()
+
+
+
+
+
+
+
+
 // const query = function() {
 // 	+prompt ("Загадывание случайного числа от 1 до 100", "")
 // }
-let query = +prompt ("Угадай число от 1 до 100", "");
+// let query = +prompt ("Угадай число от 1 до 100", "");
 
 
-const game = function(index) {
+// const game = function(index) {
 
-	if (index > 50) {
-		alert("Загаданное число меньше")
-	}	else if (index < 50 && index > 0) {
-		alert("Загаданное число больше")	
-	}	else if (isNaN(index)) {
-		alert("Введи число!")
-	} 	else if (!index) {
-		alert("Игра окончена")
-	} else if (index === 50) {
-		alert("Поздравляю, Вы угадали!!!")
-	}
+// 	if (index > 50) {
+// 		alert("Загаданное число меньше")
+// 	}	else if (index < 50 && index > 0) {
+// 		alert("Загаданное число больше")	
+// 	}	else if (isNaN(index)) {
+// 		alert("Введи число!")
+// 	} 	else if (!index) {
+// 		alert("Игра окончена")
+// 	} else if (index === 50) {
+// 		alert("Поздравляю, Вы угадали!!!")
+// 	} 
 	
-}
+// }
 
 
-game(query)
+// game(query)
 
 
 	
