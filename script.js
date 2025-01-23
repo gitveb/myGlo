@@ -1,27 +1,56 @@
 function game() {
-
-	let number = +prompt ("Угадай число от 1 до 100", "");
+	const number = 50;
 
 	function askNumber(index) {
-		if (index > 50) {
+		let query = +prompt ("Угадай число от 1 до 100", "");
+		console.log(query)
+		if (query > index) {
 			alert("Загаданное число меньше")
-			game(number)
-		}else if (index < 50 && index > 0) {
+			askNumber(index)
+		}else if (query < index && query > 0) {
 			alert("Загаданное число больше")	
-			game(number)
-		}else if (isNaN(index)) {
+			askNumber(index)
+		}else if (isNaN(query)) {
 			alert("Введи число!")
-			game(number)
-		}	else if (!index) {
+			askNumber(index)
+		}	else if (!query) {
 			alert("Игра окончена")
-		}else if (index === 50) {
+			game()
+		}else if (index === number) {
 			alert("Поздравляю, Вы угадали!!!")
 		} 
 	}
 	askNumber(number)
+	
 }
-
 game()
+
+
+
+// function game() {
+
+// 	let number = +prompt ("Угадай число от 1 до 100", "");
+
+// 	function askNumber(index) {
+// 		if (index > 50) {
+// 			alert("Загаданное число меньше")
+// 			game(number)
+// 		}else if (index < 50 && index > 0) {
+// 			alert("Загаданное число больше")	
+// 			game(number)
+// 		}else if (isNaN(index)) {
+// 			alert("Введи число!")
+// 			game(number)
+// 		}	else if (!index) {
+// 			alert("Игра окончена")
+// 		}else if (index === 50) {
+// 			alert("Поздравляю, Вы угадали!!!")
+// 		} 
+// 	}
+// 	askNumber(number)
+// }
+
+// game()
 
 
 
